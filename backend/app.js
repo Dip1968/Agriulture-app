@@ -10,7 +10,9 @@ const settingsRoutes = require('./entities/settings/settingsRoutes');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://agriulture-app.vercel.app/'
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
