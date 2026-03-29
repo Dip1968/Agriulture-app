@@ -8,6 +8,7 @@ const pool = new Pool({
   user: process.env.DB_USER || 'postgres',
   // Ensure password is always a string to avoid SCRAM errors
   password: String(process.env.DB_PASSWORD ?? ''),
+  ssl: { rejectUnauthorized: false }
 });
 
 // Test connection
